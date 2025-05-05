@@ -5,22 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d934328e-8e1d-4075-a9ca-b0ba5ca806cf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Tiktok-UI/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tiktok-UI/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tiktok-UI/public/vite.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tiktok-UI/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tiktok-UI/src/assets/react.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tiktok-UI/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tiktok-UI/src/vite-env.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tiktok-UI/tsconfig.app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tiktok-UI/tsconfig.node.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tiktok-UI/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Tiktok-UI/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tiktok-UI/eslint.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/Tiktok-UI/eslint.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tiktok-UI/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Tiktok-UI/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tiktok-UI/public/vite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tiktok-UI/src/App.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Tiktok-UI/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Tiktok-UI/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tiktok-UI/src/assets/react.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tiktok-UI/src/index.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Tiktok-UI/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Tiktok-UI/src/main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tiktok-UI/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/Tiktok-UI/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tiktok-UI/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Tiktok-UI/vite.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tiktok-UI/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Tiktok-UI/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,9 +30,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2wZMzHE7t3hMHxnNT45w9XgdxQL" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -49,6 +41,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Bang/Documents/spring/hypertech",
@@ -85,7 +78,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1746244903409</updated>
-      <workItem from="1746244904591" duration="1930000" />
+      <workItem from="1746244904591" duration="3121000" />
+      <workItem from="1746337443145" duration="5477000" />
     </task>
     <servers />
   </component>
