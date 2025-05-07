@@ -1,6 +1,11 @@
+import { ReactNode } from 'react';
 import './GlobalStyles.scss';
 
-function GlobalStyles({ children }) {
+type GlobalStylesProps = {
+    children: ReactNode;
+};
+
+function GlobalStyles({ children }: GlobalStylesProps) {
     return children;
 }
 
