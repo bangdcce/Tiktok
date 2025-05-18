@@ -2,16 +2,20 @@ import { MenuItem } from './MenuItemModel';
 import Button from '../../Buttons';
 import classNames from 'classnames/bind';
 import styles from './Menu.module.scss';
+import { MouseEventHandler } from 'react';
 
-interface MenuItemProps {
-    data: MenuItem;
+interface MenuItemProps<T> {
+    data: MenuItem<T>;
+    onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
 }
 
 const cx = classNames.bind(styles);
 
-function MenuItems({ data }: MenuItemProps) {
+function MenuItems<T>({ data, onClick }: MenuItemProps<T>) {
+    const classes = cx('menu-item', { separate: data.separate });
+
     return (
-        <Button className={cx('menu-item')} leftIcon={data.icon} to={data.to}>
+        <Button className={classes} leftIcon={data.icon} to={data.to} onClick={onClick}>
             {data.title}
         </Button>
     );

@@ -8,7 +8,6 @@ const cx = classNames.bind(styles);
 type ButtonProps = {
     to?: string;
     href?: string;
-    onClick?: () => void;
     children?: ReactNode;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any;
@@ -29,14 +28,13 @@ function Button({
     leftIcon,
     rightICon,
     children,
-    onClick,
+
     className,
     ...passProps
 }: ButtonProps) {
     let Comp: ElementType = 'button';
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const props: Record<string, any> = {
-        onClick,
         ...passProps,
     };
     if (disabled) {
