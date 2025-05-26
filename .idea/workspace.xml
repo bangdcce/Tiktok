@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d934328e-8e1d-4075-a9ca-b0ba5ca806cf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tiktok-UI/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Tiktok-UI/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tiktok-UI/public/vite.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tiktok-UI/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tiktok-UI/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Tiktok-UI/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tiktok-UI/src/assets/react.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tiktok-UI/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tiktok-UI/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Tiktok-UI/src/main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tiktok-UI/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Tiktok-UI/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tiktok-UI/src/components/AccountItems/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Tiktok-UI/src/components/AccountItems/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tiktok-UI/src/components/Icons/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Tiktok-UI/src/components/Icons/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tiktok-UI/src/components/Layout/components/Header/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Tiktok-UI/src/components/Layout/components/Header/Header.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tiktok-UI/src/components/Layout/components/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Tiktok-UI/src/components/Layout/components/Header/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +39,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Bang/Documents/spring/hypertech",
+    "last_opened_file_path": "C:/Users/Bang/Documents/spring/Tiktok/back-end",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -80,6 +75,7 @@
       <updated>1746244903409</updated>
       <workItem from="1746244904591" duration="3121000" />
       <workItem from="1746337443145" duration="5477000" />
+      <workItem from="1747815170422" duration="27000" />
     </task>
     <servers />
   </component>
