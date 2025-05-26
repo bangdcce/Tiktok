@@ -1,0 +1,13 @@
+server:
+port:8080
+servlet:
+context-path:/Tiktok
+spring:
+datasource:
+url:jdbc:postgresql://localhost:5432/hypertech
+username:postgres
+password:sa123
+jpa:
+hibernate:
+ddl-auto:update
+show-sql:true
