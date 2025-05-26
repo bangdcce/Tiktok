@@ -1,16 +1,16 @@
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTippy from '@tippyjs/react/headless';
-import { useEffect, useState, useRef, KeyboardEvent } from 'react';
+import { useEffect, useState, useRef, KeyboardEvent, ClipboardEvent } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import * as searchServices from '~/api-services/searchServices';
-import { Wrapper as PopperWrapper } from '../../Popper';
-import AccountItems from '../../AccountItems';
+import { Wrapper as PopperWrapper } from '~/components/Popper';
+import AccountItems from '~/components/AccountItems';
 import styles from './Search.module.scss';
-import { SearchIcon } from '../../Icons';
+import { SearchIcon } from '~/components/Icons';
 import { AccountResult } from './SearchResultModel';
-import { useDebounce } from '../../../hooks';
+import { useDebounce } from '~/hooks';
 
 const cx = classNames.bind(styles);
 
@@ -46,6 +46,11 @@ function Search() {
         if ((e.key === ' ' || e.key === 'Tab') && searchValue.length === 0) e.preventDefault();
     };
 
+    const handlePaste = (e: ClipboardEvent<HTMLInputElement>) => {
+        const txt = e.clipboardData.getData('text/plain');
+        if (txt.startsWith(' ') || txt.startsWith('   ')) e.preventDefault();
+    };
+
     const handleClear = () => {
         setSearchValue('');
         inputRef.current?.focus();
@@ -74,6 +79,7 @@ function Search() {
         >
             <div className={cx('search')}>
                 <input
+                    onPaste={handlePaste}
                     onKeyDown={handleKeyDown}
                     ref={inputRef}
                     value={searchValue}
@@ -95,7 +101,11 @@ function Search() {
                 )}
                 {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
 
-                <button className={cx('search-btn')} aria-label="Search">
+                <button
+                    className={cx('search-btn')}
+                    aria-label="Search"
+                    onMouseDown={(e) => e.preventDefault()}
+                >
                     <SearchIcon />
                 </button>
             </div>

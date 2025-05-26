@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import Image from '../Images';
-import { AccountResult } from '../Layout/Search/SearchResultModel';
+import { AccountResult } from '~/components/Layout/components/Search/SearchResultModel';
 import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);

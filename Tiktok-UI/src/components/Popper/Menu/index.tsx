@@ -10,12 +10,13 @@ import Header from './Header';
 interface MenuProps<T> {
     children: ReactElement;
     items: MenuItem<T>[];
+    hideOnClick: boolean;
     onChange: (item: MenuItem<T>) => void;
 }
 
 const cx = classNames.bind(styles);
 
-function Menu<T>({ children, items, onChange }: MenuProps<T>) {
+function Menu<T>({ children, items, onChange, hideOnClick = false }: MenuProps<T>) {
     const [history, setHistory] = useState<MenuItem<T>[][]>([items]);
 
     const current = history[history.length - 1];
@@ -46,6 +47,7 @@ function Menu<T>({ children, items, onChange }: MenuProps<T>) {
             placement="bottom-end"
             offset={[12, 15]}
             interactive
+            hideOnClick={hideOnClick}
             onHide={handleHide}
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex={-1} {...attrs}>
