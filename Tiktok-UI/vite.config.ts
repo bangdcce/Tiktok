@@ -10,9 +10,16 @@ export default defineConfig({
         svgr(),
         tsconfigPaths(), // ← đưa plugin vào đây
     ],
+    server: {
+        host: 'localhost', // hoặc '0.0.0.0' để cho phép truy cập ngoài LAN
+        port: 5147, // port bạn muốn dùng
+        strictPort: true, // nếu port đã dùng thì sẽ error luôn, không nhảy qua port khác
+    },
     resolve: {
         alias: {
             '~': path.resolve(__dirname, 'src'),
         },
     },
+
+    base: '/home',
 });

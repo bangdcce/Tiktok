@@ -64,6 +64,7 @@ function Search() {
     return (
         <HeadlessTippy
             interactive
+            appendTo={() => document.body}
             visible={showResult && searchResult.length > 0}
             render={(attrs) => (
                 <div className={cx('search-result')} tabIndex={-1} {...attrs}>
@@ -77,37 +78,40 @@ function Search() {
             )}
             onClickOutside={handleHideResult}
         >
-            <div className={cx('search')}>
-                <input
-                    onPaste={handlePaste}
-                    onKeyDown={handleKeyDown}
-                    ref={inputRef}
-                    value={searchValue}
-                    type="text"
-                    placeholder="Search accounts and videos"
-                    spellCheck={false}
-                    onChange={(e) => setSearchValue(e.target.value)}
-                    onFocus={() => setShowResult(true)}
-                />
+            {/* Using a wrapper <div> or <span> tag around the reference element solves this by creating a new parentNode context. */}
+            <div className={cx('search-wrapper')} tabIndex={0}>
+                <div className={cx('search')}>
+                    <input
+                        onPaste={handlePaste}
+                        onKeyDown={handleKeyDown}
+                        ref={inputRef}
+                        value={searchValue}
+                        type="text"
+                        placeholder="Search accounts and videos"
+                        spellCheck={false}
+                        onChange={(e) => setSearchValue(e.target.value)}
+                        onFocus={() => setShowResult(true)}
+                    />
 
-                {!!searchValue && !loading && (
+                    {!!searchValue && !loading && (
+                        <button
+                            className={cx('clear-btn')}
+                            aria-label="Clear search"
+                            onClick={handleClear}
+                        >
+                            <FontAwesomeIcon icon={faCircleXmark} />
+                        </button>
+                    )}
+                    {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
+
                     <button
-                        className={cx('clear-btn')}
-                        aria-label="Clear search"
-                        onClick={handleClear}
+                        className={cx('search-btn')}
+                        aria-label="Search"
+                        onMouseDown={(e) => e.preventDefault()}
                     >
-                        <FontAwesomeIcon icon={faCircleXmark} />
+                        <SearchIcon />
                     </button>
-                )}
-                {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
-
-                <button
-                    className={cx('search-btn')}
-                    aria-label="Search"
-                    onMouseDown={(e) => e.preventDefault()}
-                >
-                    <SearchIcon />
-                </button>
+                </div>
             </div>
         </HeadlessTippy>
     );

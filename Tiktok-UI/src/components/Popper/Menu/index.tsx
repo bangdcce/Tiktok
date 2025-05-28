@@ -10,7 +10,7 @@ import Header from './Header';
 interface MenuProps<T> {
     children: ReactElement;
     items: MenuItem<T>[];
-    hideOnClick: boolean;
+    hideOnClick?: boolean;
     onChange: (item: MenuItem<T>) => void;
 }
 
@@ -39,7 +39,7 @@ function Menu<T>({ children, items, onChange, hideOnClick = false }: MenuProps<T
 
     const renderItems = () =>
         current.map((item, idx) => (
-            <MenuItems key={item.title ?? idx} data={item} onClick={() => handleClickItem(item)} />
+            <MenuItems key={idx} data={item} onClick={() => handleClickItem(item)} />
         ));
 
     return (
@@ -53,7 +53,7 @@ function Menu<T>({ children, items, onChange, hideOnClick = false }: MenuProps<T
                 <div className={cx('menu-list')} tabIndex={-1} {...attrs}>
                     <PopperWrapper className={cx('menu-popper')}>
                         <Header title="Languague" onBack={handleBack} />
-                        {renderItems()}
+                        <div className={cx('menu-scrollable')}> {renderItems()}</div>
                     </PopperWrapper>
                 </div>
             )}

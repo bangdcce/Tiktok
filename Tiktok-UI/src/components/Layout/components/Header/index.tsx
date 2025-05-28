@@ -19,6 +19,7 @@ import Button from '~/components/Buttons';
 
 import styles from './Header.module.scss';
 import logoUrl from '~/assets/images/logo.svg';
+import avatarSrc from '~/assets/images/avatar.jpg';
 
 import Menu from '../../../Popper/Menu';
 import { LanguageItem, MenuItem } from '../../../Popper/Menu/MenuItemModel';
@@ -38,6 +39,20 @@ const Menu_Items: RootMenuItem[] = [
         subMenu: {
             title: 'Languague',
             data: [
+                { title: 'English', payload: { code: 'en' } },
+                { title: 'VietNam', payload: { code: 'vi' } },
+                { title: 'English', payload: { code: 'en' } },
+                { title: 'VietNam', payload: { code: 'vi' } },
+                { title: 'English', payload: { code: 'en' } },
+                { title: 'VietNam', payload: { code: 'vi' } },
+                { title: 'English', payload: { code: 'en' } },
+                { title: 'VietNam', payload: { code: 'vi' } },
+                { title: 'English', payload: { code: 'en' } },
+                { title: 'VietNam', payload: { code: 'vi' } },
+                { title: 'English', payload: { code: 'en' } },
+                { title: 'VietNam', payload: { code: 'vi' } },
+                { title: 'English', payload: { code: 'en' } },
+                { title: 'VietNam', payload: { code: 'vi' } },
                 { title: 'English', payload: { code: 'en' } },
                 { title: 'VietNam', payload: { code: 'vi' } },
             ],
@@ -131,7 +146,7 @@ function Header() {
                             <Image
                                 className={cx('user-avatar')}
                                 alt="Nguyen van 8"
-                                src="https://i.pinimg.com/736x/3d/26/88/3d2688cb9f25e45396f1901fe632cb63.jpg"
+                                src={avatarSrc}
                                 fallbackSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRojMWT2URETKHaKbXdkuYcbC3xFXu7Eqq1A&s"
                             />
                         ) : (
