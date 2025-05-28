@@ -4,7 +4,7 @@ import { useEffect, useState, useRef, KeyboardEvent, ClipboardEvent } from 'reac
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import * as searchServices from '~/api-services/searchServices';
+import * as searchServices from '~/services/searchService';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItems from '~/components/AccountItems';
 import styles from './Search.module.scss';

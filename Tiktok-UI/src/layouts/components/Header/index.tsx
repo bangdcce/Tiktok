@@ -21,12 +21,12 @@ import styles from './Header.module.scss';
 import logoUrl from '~/assets/images/logo.svg';
 import avatarSrc from '~/assets/images/avatar.jpg';
 
-import Menu from '../../../Popper/Menu';
-import { LanguageItem, MenuItem } from '../../../Popper/Menu/MenuItemModel';
+import Menu from '~/components/Popper/Menu';
+import { LanguageItem, MenuItem } from '~/components/Popper/Menu/MenuItemModel';
 import { MessageIcon, InboxIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/Images';
-import Search from '~/components/Layout/components/Search';
-import routesConfig from '~/configs/routes';
+import Search from '~/layouts/components/Search';
+import config from '~/configs';
 
 const cx = classNames.bind(styles);
 
@@ -103,7 +103,7 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('content')}>
                 <div className={cx('logo')}>
-                    <Link to={routesConfig.home} className={cx('logo-link')}>
+                    <Link to={config.routes.home} className={cx('logo-link')}>
                         <img src={logoUrl} alt="Tiktok Logo" role="img" className={cx('logoImg')} />
                     </Link>
                 </div>
