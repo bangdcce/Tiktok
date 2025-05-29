@@ -17,3 +17,8 @@ export interface MenuItem<Payload = void> {
 export interface LanguageItem {
     code: string;
 }
+
+export interface MenuHistory<T> {
+    title: string;
+    data: MenuItem<T>[];
+}
