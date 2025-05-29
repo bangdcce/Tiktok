@@ -3,8 +3,8 @@ import classNames from 'classnames/bind';
 
 import styles from './DefaultLayout.module.scss';
 
-import Header from '../components/Header';
-import Sidebar from './Sidebar';
+import Header from '~/layouts/components/Header';
+import Sidebar from '~/layouts/components/Sidebar';
 
 type DefaultLayout = {
     children: ReactNode;
