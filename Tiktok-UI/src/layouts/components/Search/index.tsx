@@ -20,12 +20,12 @@ function Search() {
     const [showResult, setShowResult] = useState<boolean>(true);
     const [loading, setLoading] = useState<boolean>(false);
 
-    const debounced = useDebounce(searchValue, 500);
+    const debouncedValue = useDebounce(searchValue, 500);
 
     const inputRef = useRef<HTMLInputElement | null>(null);
 
     useEffect(() => {
-        if (!debounced.trim()) {
+        if (!debouncedValue.trim()) {
             setSearchResult([]);
             return;
         }
@@ -33,14 +33,14 @@ function Search() {
         const fetchApi = async () => {
             setLoading(true);
 
-            const result = await searchServices.search(debounced);
+            const result = await searchServices.search(debouncedValue);
             setSearchResult(result);
 
             setLoading(false);
         };
 
         fetchApi();
-    }, [debounced]);
+    }, [debouncedValue]);
 
     const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
         if ((e.key === ' ' || e.key === 'Tab') && searchValue.length === 0) e.preventDefault();

@@ -1,5 +1,5 @@
 import { MenuItem } from './MenuItemModel';
-import Button from '../../Buttons';
+import Button from '~/components/Buttons';
 import classNames from 'classnames/bind';
 import styles from './Menu.module.scss';
 import { MouseEventHandler } from 'react';

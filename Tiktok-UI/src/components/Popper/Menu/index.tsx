@@ -4,41 +4,55 @@ import classNames from 'classnames/bind';
 import styles from './Menu.module.scss';
 import { Wrapper as PopperWrapper } from '../../Popper';
 import MenuItems from './MenuItem';
-import { MenuItem } from './MenuItemModel';
+import { MenuItem, MenuHistory } from './MenuItemModel';
 import Header from './Header';
 
 interface MenuProps<T> {
     children: ReactElement;
     items: MenuItem<T>[];
+    rootTitle?: string;
     hideOnClick?: boolean;
     onChange: (item: MenuItem<T>) => void;
 }
 
 const cx = classNames.bind(styles);
 
-function Menu<T>({ children, items, onChange, hideOnClick = false }: MenuProps<T>) {
-    const [history, setHistory] = useState<MenuItem<T>[][]>([items]);
+function Menu<T>({
+    children,
+    items,
+    onChange,
+    hideOnClick = false,
+    rootTitle = 'Menu',
+}: MenuProps<T>) {
+    const [history, setHistory] = useState<MenuHistory<T>[]>([{ title: rootTitle, data: items }]);
 
-    const current = history[history.length - 1];
+    const { title: currentTitle, data: currentData } = history[history.length - 1];
 
-    const handleClickItem = useCallback((item: MenuItem<T>) => {
-        if (item.subMenu) {
-            setHistory((prev) => [...prev, item.subMenu!.data]);
-        } else {
-            onChange(item);
-        }
-    }, []);
+    const handleClickItem = useCallback(
+        (item: MenuItem<T>) => {
+            if (item.subMenu) {
+                setHistory((prev) => [
+                    ...prev,
+                    { title: item.subMenu!.title, data: item.subMenu!.data },
+                ]);
+            } else {
+                onChange(item);
+            }
+        },
+        [onChange]
+    );
 
     const handleBack = useCallback(() => {
         setHistory((prev) => prev.slice(0, prev.length - 1));
     }, []);
 
     const handleHide = useCallback(() => {
-        setHistory([items]);
-    }, [items]);
+        // Reset về cấp gốc
+        setHistory([{ title: rootTitle, data: items }]);
+    }, [items, rootTitle]);
 
     const renderItems = () =>
-        current.map((item, idx) => (
+        currentData.map((item, idx) => (
             <MenuItems key={idx} data={item} onClick={() => handleClickItem(item)} />
         ));
 
@@ -52,7 +66,10 @@ function Menu<T>({ children, items, onChange, hideOnClick = false }: MenuProps<T
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex={-1} {...attrs}>
                     <PopperWrapper className={cx('menu-popper')}>
-                        <Header title="Languague" onBack={handleBack} />
+                        <Header
+                            title={currentTitle}
+                            onBack={history.length > 1 ? handleBack : undefined}
+                        />
                         <div className={cx('menu-scrollable')}> {renderItems()}</div>
                     </PopperWrapper>
                 </div>
